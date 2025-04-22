@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="row"></div>
+    <div class="col1">
+        <u1>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Sign in</a></li>
+        </u1>
+    </div>
+    <div class="col2">
+        <h1>DREAM DESTINATION </h1>
+    </div>
+    <div class="con">
+    <div class="row1">
+                 <form>
+                <div>
+                <label for="name" class="dk"> Name: </label>
+                <input type="text" id="Name" required placeholder="Enter Name">
+                <div class="error"></div>
+             </div>
+                <div>
+                <label for="ph"> Ph Num :</label>
+                <input type="number" id="ph"  required placeholder="Enter Number">
+                </div>
+                <div>
+                <label for="email"> Email id: </label>
+                <input type="text,icon,number" id="email"  required placeholder="Enter Email id">
+                </div>
+                <div>
+                <select id="drops">
+                    <option>Select Here</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                    <option value="kerala">Kerala</option>
+                    <option value="andhrapradesh">Andhra Pradesh</option>
+                    <option value="kanataka">Kanataka</option>
+                    <option value="pondicherry">Pondicherry</option>
+                  </select>
+                  </div>
+                  <div>
+                  <input type="checkbox" id="a" name="TRAVEL" value="Flight"><label for="a">Flight</label>
+                  <input type="checkbox" id="b" name="TRAVEL" value="Bus"><label for="b">Bus</label>
+                  <input type="checkbox" id="c" name="TRAVEL" value="Train"><label for="c">Train</label>
+                  <input type="checkbox" id="d" name="TRAVEL" value="Bike"><label for="d">Bike</label>
+                  </div>
+                  <div>
+                <button type="button" onclick="Submitdata()">Submit</button>
+</div>
+             </form>
+             <script>
+                function Submitdata(){
+                    let name1=document.getElementById("Name");
+                    console.log(name1);
+                    console.log(name1.value);
+                          let finalname=name1.value; 
+
+                    let ph=document.getElementById("ph");
+                    console.log(ph);
+                    console.log(ph.value);
+                              let finalph=ph.value;
+
+                    let email=document.getElementById("email");
+                    console.log(email);
+                    console.log(email.value);
+                    let finalemail=email.value;
+
+                let res1=document.getElementById("drops")
+                console.log(res1);
+                console.log(res1.value);
+                let finalres1=res1.value;
+                
+                let checks = document.getElementsByName("TRAVEL")
+                console.log(checks);
+                let res=[];
+                for(let val of checks){
+                    if(val.checked){
+                        res.push(val.value);
+                    }
+
+                }
+                console.log(res);
+                console.log(res.join());
+                let finalval=res.value;
+                
+                console.log(finalname);
+                console.log(finalph);
+                console.log(finalemail);
+                console.log(finalres1);
+                console.log(finalval);
+
+            if(finalname==""){
+                setError(name1,"Name is empty")
+            }
+            else{
+                setSuccess(name1)
+            }
+
+            }
+
+            function setError(element,msg){
+                let parents=elememt.parentElement;
+                let resfinal=parents.querySelector(".error");
+                resfinal.innerText=msg;
+            }  
+
+            function setSuccess(element){
+                let parents=element.parentElement;
+                let resfinal= parents.querySelector(".error");
+                resfinal.innerText='';
+            }
+
+
+             </script>
+     
+    </div>
+    </div>   
+</body>
+</html>  
